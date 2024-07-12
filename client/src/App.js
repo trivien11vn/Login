@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/login' element={<Login />}/>
-        <Route path='/login-success/:userId' element={<LoginSuccess />}/>
+        <Route path='/login-success/:userId/:tokenLogin' element={<LoginSuccess />}/>
       </Routes>
     </div>
   );

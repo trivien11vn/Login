@@ -1,8 +1,8 @@
 import { apiLoginSuccess } from '../../apis/authService'
 import actionType from './actionType'
-export const loginSuccess = (id) => async(dispatch) => { 
+export const loginSuccess = (id, tokenLogin) => async(dispatch) => { 
     try{
-        let response = await apiLoginSuccess(id)
+        let response = await apiLoginSuccess(id, tokenLogin)
         if(response?.data?.err === 0){
             dispatch({
                 type: actionType.LOGIN_SUCCESS,

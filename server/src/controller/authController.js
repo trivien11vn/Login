@@ -1,16 +1,17 @@
 const authService = require('../service/authService')
 
 const loginSuccess = async(req, res) => {
-    const {id} = req?.body
+    const {id, tokenLogin} = req?.body
+    console.log(id, tokenLogin)
     try{
-        if(!id){
+        if(!id || !tokenLogin){
             res.status(400).json({
                 err: 1,
                 mes: 'Missing input'
             })
         }
         else{
-            let response = await authService.loginSuccessService(id)
+            let response = await authService.loginSuccessService(id, tokenLogin)
             res.status(200).json(
                 response
             )
